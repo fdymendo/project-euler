@@ -9,4 +9,7 @@ public class GenericMethods {
     log.info("Duración: {} milliseconds", System.currentTimeMillis() - startTime);
   }
 
+  public static boolean itsEven(int number) {
+    return (number % 2 == 0);
+  }
 }
