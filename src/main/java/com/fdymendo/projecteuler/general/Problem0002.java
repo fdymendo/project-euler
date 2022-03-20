@@ -1,4 +1,4 @@
-package com.fdymendo.projecteuler.problem0002;
+package com.fdymendo.projecteuler.general;
 
 import com.fdymendo.projecteuler.util.GenericMethods;
 import lombok.extern.log4j.Log4j2;
