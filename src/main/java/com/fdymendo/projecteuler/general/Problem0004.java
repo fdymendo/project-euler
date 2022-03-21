@@ -12,7 +12,6 @@ public class Problem0004 {
     // of two 2-digit numbers is 9009 = 91 × 99.
     // Find the largest palindrome made from the product of two 3-digit numbers.
     long startTime = System.currentTimeMillis();
-
     log.info("es palindromo: {}", getMaxPalindrome(3));
     GenericMethods.differenceTime(startTime);
 
@@ -37,7 +36,6 @@ public class Problem0004 {
         if (!tmpHash.containsKey(j)) {
           tmpHash.put(j, j);
           if (isPalindrome(i * j)) {
-            // log.info("es palindrome: {}", i * j);
             if (i * j > maxPalindrome) {
               maxPalindrome = i * j;
             }
@@ -54,7 +52,6 @@ public class Problem0004 {
 
     boolean isPar = tmpLength % 2 == 0 ? true : false;
     int sizePart = tmpLength / 2;
-//    log.info("mitad: {}", sizePart);
     String part1 = tmp.substring(0, sizePart);
     String part2 = "";
     if (isPar) {
@@ -62,11 +59,6 @@ public class Problem0004 {
     } else {
       part2 = tmp.substring(sizePart + 1, tmpLength);
     }
-//    log.info("Part1: {}", part1);
-//    log.info("part2: {}", part2);
-
-//    log.info("part2 reverse : {}", reverse(part2));
-
     return part1.equals(reverse(part2));
   }
 
