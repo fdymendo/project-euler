@@ -1,5 +1,6 @@
 package com.fdymendo.projecteuler.general;
 
+import com.fdymendo.projecteuler.util.GenericMethods;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
@@ -11,7 +12,10 @@ public class Problem0003 {
   // What is the largest prime factor of the number 600851475143 ?
   public static void main(String[] args) {
     long number = 600851475143L;
+    long startTime = System.currentTimeMillis();
     log.info("largest prime factor of the number 600851475143: {}", largestPrimeFactor(number));
+    GenericMethods.differenceTime(startTime);
+
   }
 
   private static long largestPrimeFactor(long number) {
@@ -52,7 +56,7 @@ public class Problem0003 {
         log.info("encontro exacto");
         return false;
       }
-//      log.info("ciclo {}", i);
+      // log.info("ciclo {}", i);
     }
     log.info("true final");
 
