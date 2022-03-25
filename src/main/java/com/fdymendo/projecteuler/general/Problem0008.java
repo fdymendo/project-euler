@@ -1,5 +1,6 @@
 package com.fdymendo.projecteuler.general;
 
+import com.fdymendo.projecteuler.util.GenericMethods;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
@@ -33,7 +34,9 @@ public class Problem0008 {
         + "84580156166097919133875499200524063689912560717606"
         + "05886116467109405077541002256983155200055935729725"
         + "71636269561882670428252483600823257530420752963450";
+    long startTime = System.currentTimeMillis();
     log.info("ind the thirteen adjacent digits: {}", maxAdjacents(list, 13));
+    GenericMethods.differenceTime(startTime);
 
   }
 
