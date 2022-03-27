@@ -1,5 +1,6 @@
 package com.fdymendo.projecteuler.util;
 
+import java.text.DecimalFormat;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
@@ -28,5 +29,11 @@ public class GenericMethods {
       }
     }
     return true;
+  }
+
+  public static String PrintDouble(Double number) {
+    DecimalFormat df = new DecimalFormat("#");
+    df.setMaximumFractionDigits(8);
+    return df.format(number);
   }
 }
