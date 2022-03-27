@@ -1,6 +1,11 @@
 package com.fdymendo.projecteuler.util;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.text.DecimalFormat;
+import org.springframework.util.ResourceUtils;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
@@ -35,5 +40,13 @@ public class GenericMethods {
     DecimalFormat df = new DecimalFormat("#");
     df.setMaximumFractionDigits(8);
     return df.format(number);
+  }
+
+  public static File loadFile(String path) throws FileNotFoundException {
+    return ResourceUtils.getFile(path);
+  }
+
+  public static InputStream loadArchive(File f) throws FileNotFoundException {
+    return new FileInputStream(f);
   }
 }
