@@ -19,6 +19,10 @@ public class GenericMethods {
     return (number % 2 == 0);
   }
 
+  public static boolean itsEven(double number) {
+    return (number % 2 == 0);
+  }
+
   public static boolean isPrime(int number) {
     if (itsEven(number)) {
       if (number == 2) {
