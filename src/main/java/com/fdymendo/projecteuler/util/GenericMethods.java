@@ -1,10 +1,16 @@
 package com.fdymendo.projecteuler.util;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import org.springframework.util.ResourceUtils;
 import lombok.extern.log4j.Log4j2;
 
@@ -52,5 +58,27 @@ public class GenericMethods {
 
   public static InputStream loadArchive(File f) throws FileNotFoundException {
     return new FileInputStream(f);
+  }
+
+  public static void saveFile(ArrayList<String> list, String savePath, String fileName) {
+    try {
+
+      File sf = new File(savePath);
+      if (!sf.exists()) {
+        sf.mkdirs();
+      }
+      FileOutputStream fos = new FileOutputStream(sf.getPath() + "/" + fileName);
+      OutputStreamWriter osw = new OutputStreamWriter(fos);
+      Writer writer = new BufferedWriter(osw);
+      for (String s : list) {
+        writer.write(s + "\n");
+      }
+      writer.flush();
+      writer.close();
+
+    } catch (IOException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
   }
 }
